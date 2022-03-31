@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Submit Button</title>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100');
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.title {
+  margin: 0 auto;
+  color: white;
+<!--  font-family: 'Lato', sans-serif;-->
+  font-size: 5rem;
+}
+
+.container2 {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  animation: changeBackgroundColor 7s infinite;
+<!--  margin: 5% 15%;-->
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: #001F3F;
+  }
+  50% {
+    background-color: #055C9D;
+  }
+  100% {
+    background-color: #001F3F;
+  }
+}
+</style>
+</head>
+  <body >
+      <div class="container2"  >
+          <h2 class="title">Video Streaming in Web Browsers with OpenCV & Flask</h2><br>
+        <form method="post" action="{{ url_for('tasks') }}">
+         <input type="submit" class="btn btn-info" value="Stop/Start" name="stop" />
+         <input type="submit" class="btn btn-success" value="Capture" name="click" />
+         <input type="submit" class="btn btn-primary" value="Grey" name="grey" />
+         <input type="submit" class="btn btn-danger" value="Negative" name="neg" />
+         <input type="submit" class="btn btn-warning" value="Detect Face" name="face" />
+            <input type="submit" class="btn btn-primary" value="Sharpen" name="sharp" />
+         <input type="submit" class="btn btn-danger" value="Invert" name="Invert" />
+         <input type="submit" class="btn btn-warning" value="Blur" name="Blur" />
+         <input type="submit" class="btn btn-success" value="Sketch" name="sketch" />
+         <input type="submit" class="btn btn-info" value="Sepia" name="sepia" />
+			<input type="submit" class="btn btn-success" value="Start/Stop Recording" name="rec" />
+        </form><br>
+
+        <img src="{{ url_for('video') }}" width="50%" ;/>
+    </div>
+
+    </body>
+</html>
